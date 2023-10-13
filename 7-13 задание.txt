@@ -1,0 +1,387 @@
+user@Linux:/$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create DATETABASE man's friends;
+    '> SHOW DATEBASE
+    '> ^DBye
+user@Linux:/$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATEBASE
+    -> 
+    -> 
+    -> 
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATEBASE' at line 1
+mysql> SHOW DATEBASES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATEBASES' at line 1
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0,05 sec)
+
+mysql> CREATE DATABASE human friends;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'friends' at line 1
+mysql> CREATE DATABASE 'human friends';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''human friends'' at line 1
+mysql> CREATE DATABASE friends';
+[1]+  Остановлен    sudo mysql
+user@Linux:/$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create DATETABASE human_friends;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATETABASE human_friends' at line 1
+mysql> CREATE DATABASE human_friends;
+Query OK, 1 row affected (0,01 sec)
+
+mysql> SHOW DATEBASES
+    -> 
+    -> 
+    -> 
+    -> 
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATEBASES' at line 1
+mysql> SHOW DATEBASES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATEBASES' at line 1
+mysql> SHOW DATABASE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATABASE' at line 1
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| human_friends      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0,00 sec)
+
+mysql> USE human_friends;
+Database changed
+mysql> CREATE TABLE cat (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE
+    -> );
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> CREATE TABLE dog (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE
+    -> );
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> CREATE TABLE hamster (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE
+    -> );
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> CREATE TABLE horse (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE
+    -> );
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> CREATE TABLE camel (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE
+    -> );
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> CREATE TABLE donkey (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE
+    -> );
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| camel                   |
+| cat                     |
+| dog                     |
+| donkey                  |
+| hamster                 |
+| horse                   |
++-------------------------+
+6 rows in set (0,00 sec)
+
+mysql> INSERT INTO cat (animal_name,commands, date_of_birth) VALUES 
+    -> ('barsik', 'meow', '2021-01-01'),
+    -> ('kosh', 'meow, stand', '2019-12-10'),
+    ->     ('frank', 'meow, wlow', '2020-02-02'),
+    ->     ('dir', 'meow', '2022-03-03'),
+    ->     ('krop', 'meow', '2018-05-05');
+Query OK, 5 rows affected (0,01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO dog (animal_name,commands, date_of_birth) VALUES 
+    -> ('wolf', 'flufy', '2021-01-01'),
+    -> ('ralf', 'site', '2019-12-10'),
+    ->     ('qwerty', 'left hand', '2020-02-02'),
+    ->     ('asdfg', 'right hand', '2022-03-03'),
+    ->     ('red', 'meow', '2018-05-05');
+Query OK, 5 rows affected (0,01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO hamster (animal_name,commands, date_of_birth) VALUES 
+    -> ('crack', 'eat', '2021-01-01'),
+    -> ('jisus', 'eat', '2019-12-10'),
+    ->     ('qwerty', 'left hand', '2020-02-02'),
+    ->     ('asdfg', 'right hand', '2022-03-03'),
+    ->     ('black', 'meow', '2018-05-05');
+Query OK, 5 rows affected (0,00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO horse (animal_name,commands, date_of_birth) VALUES 
+    -> ('igogo', 'eat', '2021-01-01'),
+    -> ('igaga', 'eat', '2019-12-10'),
+    ->     ('ijoho', 'left hand', '2020-02-02'),
+    ->     ('jijij', 'right hand', '2022-03-03'),
+    ->     ('aoaoaa', 'meow', '2018-05-05');
+Query OK, 5 rows affected (0,00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO camel (animal_name,commands, date_of_birth) VALUES 
+    -> ('qwea', 'eat', '2021-01-01'),
+    -> ('dsaf', 'eat', '2019-12-10'),
+    ->     ('gfdsdf', 'left hand', '2020-02-02'),
+    ->     ('grwtw', 'right hand', '2022-03-03'),
+    ->     ('werqr', 'meow', '2018-05-05');
+Query OK, 5 rows affected (0,00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO donkey (animal_name,commands, date_of_birth) VALUES 
+    -> ('stup', 'eat', '2021-01-01'),
+    -> ('tupi', 'eat', '2019-12-10'),
+    ->     ('upid', 'left hand', '2020-02-02'),
+    ->     ('task', 'right hand', '2022-03-03'),
+    ->     ('done', 'meow', '2018-05-05');
+Query OK, 5 rows affected (0,00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> TRUNCATE camel;
+Query OK, 0 rows affected (0,00 sec)
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| camel                   |
+| cat                     |
+| dog                     |
+| donkey                  |
+| hamster                 |
+| horse                   |
++-------------------------+
+6 rows in set (0,00 sec)
+
+mysql> SELECT * FROM camel;
+Empty set (0,00 sec)
+
+mysql> SELECT * FROM cat;
++----+-------------+-------------+---------------+
+| id | animal_name | commands    | date_of_birth |
++----+-------------+-------------+---------------+
+|  1 | barsik      | meow        | 2021-01-01    |
+|  2 | kosh        | meow, stand | 2019-12-10    |
+|  3 | frank       | meow, wlow  | 2020-02-02    |
+|  4 | dir         | meow        | 2022-03-03    |
+|  5 | krop        | meow        | 2018-05-05    |
++----+-------------+-------------+---------------+
+5 rows in set (0,00 sec)
+
+mysql> INSERT INTO horse (animal_name, commands, date_of_birth)
+    -> SELECT animal_name, commands, date_of_birth
+    -> FROM donkey;
+Query OK, 5 rows affected (0,00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> DROP TABLE donkey;
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> RENAME TABLE horse TO horse_donkey;
+Query OK, 0 rows affected (0,00 sec)
+
+mysql> CREATE TABLE young_animal (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE,
+    ->     age TEXT
+    -> );
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> DELIMITER $$
+mysql> CREATE FUNCTION age_animal (date_b DATE)
+    -> RETURNS TEXT
+    -> DETERMINISTIC
+    -> BEGIN
+    ->     DECLARE res TEXT DEFAULT '';
+    -> SET res = CONCAT(
+    ->             TIMESTAMPDIFF(YEAR, date_b, CURDATE()),
+    ->             ' years ',
+    ->             TIMESTAMPDIFF(MONTH, date_b, CURDATE()) % 12,
+    ->             ' month'
+    ->         );
+    -> RETURN res;
+    -> END $$
+Query OK, 0 rows affected (0,01 sec)
+
+mysql> DELIMITER ;
+mysql> DELIMITER $$
+mysql> CREATE FUNCTION age_animal (date_b DATE)
+    -> RETURNS TEXT
+    -> DETERMINISTIC
+    -> BEGIN
+    ->     DECLARE res TEXT DEFAULT '';
+    -> SET res = CONCAT(
+    ->             TIMESTAMPDIFF(YEAR, date_b, CURDATE()),
+    ->             ' years ',
+    ->             TIMESTAMPDIFF(MONTH, date_b, CURDATE()) % 12,
+    ->             ' month'
+    ->         );
+    -> RETURN res;
+    -> END $$
+ERROR 1304 (42000): FUNCTION age_animal already exists
+mysql> DELIMITER ;
+mysql> INSERT INTO young_animal (animal_name, commands, date_of_birth, age)
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth)
+    -> FROM cat
+    -> WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 1 AND 3
+    -> UNION ALL
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth)
+    -> FROM dog
+    -> WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 1 AND 3
+    -> UNION ALL
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth)
+    -> FROM hamster
+    -> WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 1 AND 3
+    -> UNION ALL
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth)
+    -> FROM horse_donkey
+    -> WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 1 AND 3;
+Query OK, 20 rows affected (0,01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> SET SQL_SAFE_UPDATES = 0;
+Query OK, 0 rows affected (0,00 sec)
+
+mysql> 
+mysql> DELETE FROM cat 
+    -> WHERE TIMESTAMPDIFF(YEAR, cat.date_of_birth, CURDATE()) IN (1, 2, 3);
+Query OK, 4 rows affected (0,00 sec)
+
+mysql> 
+mysql> DELETE FROM dog 
+    -> WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 1 AND 3;
+Query OK, 4 rows affected (0,00 sec)
+
+mysql> 
+mysql> DELETE FROM hamster 
+    -> WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 1 AND 3;
+Query OK, 4 rows affected (0,00 sec)
+
+mysql> 
+mysql> DELETE FROM horse_donkey 
+    -> WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) BETWEEN 1 AND 3;
+Query OK, 8 rows affected (0,00 sec)
+
+mysql> 
+mysql> CREATE TABLE animals (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> animal_name CHAR(30),
+    ->     commands TEXT,
+    ->     date_of_birth DATE,
+    ->     age TEXT,
+    ->     animal_type ENUM('cat','dog','hamster', 'horse_donkey', 'young_animals') NOT NULL
+    -> );
+Query OK, 0 rows affected (0,02 sec)
+
+mysql> 
+mysql> INSERT INTO animals (animal_name, commands, date_of_birth, age, animal_type)
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth), 'cat'
+    -> FROM cat;
+Query OK, 1 row affected (0,00 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> INSERT INTO animals (animal_name, commands, date_of_birth, age, animal_type)
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth), 'dog'
+    -> FROM dog;
+Query OK, 1 row affected (0,00 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> INSERT INTO animals (animal_name, commands, date_of_birth, age, animal_type)
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth), 'hamster'
+    -> FROM hamster;
+Query OK, 1 row affected (0,00 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> INSERT INTO animals (animal_name, commands, date_of_birth, age, animal_type)
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth), 'horse_donkey'
+    -> FROM horse_donkey;
+Query OK, 2 rows affected (0,00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> INSERT INTO animals (animal_name, commands, date_of_birth, age, animal_type)
+    -> SELECT animal_name, commands, date_of_birth, age_animal(date_of_birth), 'young_animals'
+    -> FROM young_animal;
+Query OK, 20 rows affected (0,00 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> 
+
